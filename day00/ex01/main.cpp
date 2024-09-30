@@ -26,11 +26,20 @@ int main()
 {
     int sum = 0;
     menu(sum);
+    Contact contact[8];
     std::string command;
     std::cin >> command;
     if(command == "ADD")
     {
-        add_contact();
-    }
+        if(sum < 9)
+        {
+            for(int i = 0; i < 8; i++)
+            {
+                contact[i] = add_contact();
+            }
+        }
+        
+        sum++;
+    } else
     return 0;
 }
