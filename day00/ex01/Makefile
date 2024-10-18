@@ -2,12 +2,12 @@
 NAME     := main
 
 # Sources and objects.
-SRCS     := main.cpp
+SRCS     := main.cpp phone_book.cpp contact.cpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
 CXX      := clang++
-CXXFLAGS := -Wall -Werror -Wextra
+CXXFLAGS := -Wall -Werror -Wextra -std=c++11
 
 # Compile and create everything.
 all: $(NAME)
@@ -22,7 +22,7 @@ $(NAME): $(OBJS)
 
 # Rule to remove all the object files.
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) 
 	@echo "[INFO] Objects removed!"
 
 # Rule to remove everything that has been created by the makefile.
